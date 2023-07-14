@@ -13,7 +13,7 @@ export async function rescheduleTasks(finishedTasks: Task[], kv: KVNamespace) {
 }
 
 async function rescheduleTask({ id, properties: { Tags } }: Task, kv: KVNamespace): Promise<any[]> {
-	return setNextTodoDate(id, dateToReschedule(Tags.multi_select.map((item: { name: string }) => item.name)))
+	return setNextTodoDate(id, dateToReschedule(Tags.multi_select.map((item: { name: string }) => item.name)), kv)
 }
 function dateToReschedule(periods: string[]): Date {
 	const periodMap: Record<string, number> = {

@@ -9,5 +9,5 @@ compatibility_date = "2023-05-15"
 crons = ["* * * * *"] # * * * * * = run every minute
 
 kv_namespaces = [
-    { binding = "household", id = "4f75a9b63a50483bb71b6a294747a6f0" }
+    { binding = "HOUSEHOLD_KV", id = "4f75a9b63a50483bb71b6a294747a6f0" }
 ]
