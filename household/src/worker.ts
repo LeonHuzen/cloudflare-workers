@@ -36,7 +36,7 @@ export interface Env {
 	// DB: D1Database
 
 	NOTION_API_KEY: string
-	household: KVNamespace
+	HOUSEHOLD_KV: KVNamespace
 }
 
 export default {
@@ -45,7 +45,7 @@ export default {
 	async scheduled(event: ScheduledEvent, env: Env, ctx: ExecutionContext): Promise<void> {
 		initNotionHeaders(env.NOTION_API_KEY)
 		const finishedTasks = await getAllFinishedTasks()
-		const rescheduled = await rescheduleTasks(finishedTasks, env.household)
+		const rescheduled = await rescheduleTasks(finishedTasks, env.HOUSEHOLD_KV)
 
 		console.log(rescheduled)
 	},
