@@ -7,11 +7,9 @@ on:
   workflow_dispatch:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
-  build:
+  deploy:
 
     runs-on: ubuntu-latest
     defaults:
@@ -29,3 +27,4 @@ jobs:
       uses: cloudflare/wrangler-action@2.0.0
       with:
         apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        command: deploy
