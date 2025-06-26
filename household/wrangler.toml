@@ -7,7 +7,3 @@ compatibility_date = "2023-05-15"
 # Configuration: https://developers.cloudflare.com/workers/wrangler/configuration/#triggers
 [triggers]
 crons = ["* * * * *"] # * * * * * = run every minute
-
-kv_namespaces = [
-  { binding = "HOUSEHOLD_KV", id = "4f75a9b63a50483bb71b6a294747a6f0" }
-]
