@@ -19,6 +19,7 @@ jobs:
       uses: cloudflare/wrangler-action@v3
       with:
         apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        wranglerVersion: '4'
         command: deploy household/src/worker.ts
       env:
         NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
